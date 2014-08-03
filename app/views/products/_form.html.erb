@@ -1,0 +1,88 @@
+<%= form_for @product do |f| %>
+  <% if @product.errors.any? %>
+  <div id="error_explanation">
+    <h2><%= pluralize(@product.errors.count, "error") %> 	prohibited this item from being saved: </h2>
+    <ul>
+    <% @product.errors.full_messages.each do |msg| %>
+    	<li><%= msg %></li>
+    <% end %>
+    </ul>
+  </div>
+  <% end %>
+
+  
+
+  <p>
+    <%= f.label :'Item type' %>
+  	<%= f.select :item, [['Faucet','Spout'],['Sink','Bowl'],['Controller','Control']] %>
+  </p> 
+
+  <p>
+    <%= f.label :'Serial number' %><br>
+    <%= f.text_field :serialno, :required => true %>
+  </p> 
+
+  <p>
+    <%= f.label :color %><br>
+    <%= f.select :color, [['Amber','Amber'],['Amethyst','Amethyst'],['Cobalt','Cobalt'],['Ebony','Ebony'],['Emerald','Emerald'],['Gold','Gold'],['Ruby','Ruby'],['White','White'],['Custom','Custom']] %>
+  </p>  
+
+  <p>
+    <%= f.label :'Total height (in)' %><br>
+    <%= f.text_field :totalheightinches, :required => true %>
+  </p> 
+
+  <p>
+    <%= f.label :Price %><br>
+    <%= f.text_field :price, :required => true %>
+  </p> 
+
+  <p>
+    <%= f.label :description %><br>
+    <%= f.text_field :description, :required => true %>
+  </p>  
+
+  <p>
+    <%= f.label :'Front image' %><br>
+    <%= f.file_field :front_img, :required => true %>
+  </p>  
+
+  <p>
+    <%= f.label :'Side image' %><br>
+    <%= f.file_field :side_img %>
+  </p>  
+
+  <p>
+    <%= f.label :'Twist type' %>
+  	<%= f.select :twist_type, [['Faucets only',''],['Single','single'],['Double','double']] %>
+  </p>
+
+  <p>
+    <%= f.label :'Opacity' %>
+  	<%= f.select :opacity, [['Faucets only',''],['Transparent','Transparent'],['Opaque','Opaque']] %>
+  </p>
+
+  <p>
+    <%= f.label :'Spout height (in)' %><br>
+    <%= f.text_field :spout_height_in %>
+  </p> 
+
+  <p>
+    <%= f.label :'Projection' %><br>
+    <%= f.text_field :projection %>
+  </p> 
+
+  <p>
+    <%= f.label :'Major diameter' %><br>
+    <%= f.text_field :major_diameter %>
+  </p> 
+
+  <p>
+    <%= f.label :'Hardware finish' %>
+  	<%= f.select :hardware_finish, [['Controls only',''],['Chrome','chrome'],['Polished chrome','polished chrome'],['Brass','brass'],['Satin nickel','satin nickel']] %>
+  </p>
+
+  <p>
+  	<%= f.submit %>
+  </p>	
+ <% end %>

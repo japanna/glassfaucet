@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Title</title>
+	<meta content="text/html; charset=UTF-8" http-equiv="Content-Type">	
+	<script src="//use.edgefonts.net/open-sans:n4,n7,n8.js"></script>
+	<link rel="stylesheet" href="/assets/application.css">
+	<script src="/assets/jquery-1.9.1.min.js"></script>
+	<%= favicon_link_tag 'favicon.ico' %>
+	
+</head>
+
+<body>
+  <div id="content">
+	<header>
+		<div id="header_left">
+			<p>Lorem Ipsum dolor est</p>
+			<p>gratim sequencia lador fini</p>
+		</div>
+		<div id="header_center">
+			<a href="/"><img src="/assets/logo.png" alt="logo"></a>
+		</div>
+	</header>
+	<nav>
+		<ul id="nav_left">
+		<!--  <li><a href='/'>HOME</a></li> -->
+		  <!-- Menu for superuser who is logged in -->
+		  
+		</ul>
+		<ul id="nav_right">
+	        	<li><a href='/products'>GALLERY</a></li>
+	        	<li><a href='/gallery/about'>ABOUT</a></li>
+	        	<li><a href='/gallery/specs'>DOCUMENTS</a></li>
+	        	<li><a href='/users/login'>LOG IN</a></li>
+	            <li><a href='/users/signup'>SIGN UP</a></li>
+    	</ul>
+	</nav>
+	<div class="frame" id="browse">
+    <div id="gallery">
+      <div id="filter_options">
+        <a class="back_to_gallery" href="/products"><h2><img src="/assets/chevron_left.png" alt="chevron_left"> Back to gallery</h2></a>
+        <ul id="filter_list"> 
+          <li class="drop_filter">
+            <h2 class="category"><span>►</span>Product </h2>
+            <ul class="options">
+              <li class="Spout">Faucets <a href="" class="clear_filter">Clear all</a></li>
+              <li class="Bowl">Sinks <a href="" class="clear_filter">Clear all</a></li>
+              <li class="Control">Controls <a href="" class="clear_filter">Clear all</a></li>
+            </ul>
+          </li>
+          <li class="drop_filter">
+            <h2 class="category"><span>►</span>Color </h2>
+            <ul class="options">
+              <li class="Amber">Amber <a href="" class="clear_filter">Clear all</a></li>
+              <li class="Amethyst">Amethyst <a href="" class="clear_filter">Clear all</a></li>
+              <li class="Cobalt">Cobalt <a href="" class="clear_filter">Clear all</a></li>
+              <li class="Ebony">Ebony <a href="" class="clear_filter">Clear all</a></li>
+              <li class="Emerald">Emerald <a href="" class="clear_filter">Clear all</a></li>
+              <li class="Gold">Gold <a href="" class="clear_filter">Clear all</a></li>
+              <li class="Ruby">Ruby <a href="" class="clear_filter">Clear all</a></li>
+              <li class="White">White <a href="" class="clear_filter">Clear all</a></li>
+              <li class="Custom">Custom <a href="" class="clear_filter">Clear all</a></li>
+            </ul>
+          </li>
+          <li class="drop_filter">
+            <h2 class="category"><span>►</span> Twist </h2>
+            <ul class="options">
+              <li class="single">Single <a href="" class="clear_filter">Clear all</a></li>
+              <li class="double">Double <a href="" class="clear_filter">Clear all</a></li>
+            </ul>
+          </li>
+          <li class="drop_filter">
+            <h2 class="category"><span>►</span> Opacity </h2>
+            <ul class="options">
+              <li class="Transparent">Transparent <a href="" class="clear_filter">Clear all</a></li>
+              <li class="Opaque">Opaque <a href="" class="clear_filter">Clear all</a></li>
+            </ul>
+          </li> 
+        </ul>
+      </div>
+     
+

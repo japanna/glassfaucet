@@ -1,0 +1,63 @@
+
+<%= render 'header' %>
+<script src="/assets/browse.js"></script>
+<div class="results">
+  <header class="no_of_items"><%= @products.all.count %> pieces in gallery</header> 
+    <div id='works'>
+      <% @products.each do |product| %>
+        <% if product.item == "Spout" %>
+          <figure class="<%= product.color %> <%= product.item %> <%= product.twist_type %> <%= product.opacity %>">
+            <div class="img_inner">
+              <a href="/products/<%= product.id %>">
+                <img src='/uploads/<%= product.front_img %> '>
+              </a>
+            </div>
+            <figcaption>
+                <p class ="color"><%= product.color %></p>
+                <p class="serial"><%= product.opacity %> <%= product.twist_type %>-twist</p>
+                <p class="serial">N°<%= product.serialno %></p>
+                <p class="sale_price">$<%= product.price.floor %> USD</p>
+            </figcaption>
+          </figure>
+        <% end %>
+
+        <% if product.item == "Bowl" %>
+          <figure class="<%= product.color %> <%= product.item %>">
+            <div class="img_inner">
+              <a href="/products/<%= product.id %>">
+                <img class="gallery_bowl_img" src='/uploads/<%= product.front_img %> '>
+              </a>
+            </div>
+            <figcaption>
+              <p class ="color"><%= product.color %></p>
+              <p class="serial"><%= product.item %>, N°<%= product.serialno %></p>
+              <p class="sale_price">$<%= product.price.floor %> USD</p>
+            </figcaption>
+          </figure>
+        <% end %>
+
+        <% if product.item == "Control" %>
+          <figure class="<%= product.color %> <%= product.item %>">
+            <div class="img_inner">
+              <a href="/products/<%= product.id %>">
+                <img src='/uploads/<%= product.front_img %> '>
+              </a>
+            </div>
+            <figcaption>
+              <p class ="color"><%= product.color %></p>
+              <p class="serial"><%= product.item %>, N°<%= product.serialno %></p>
+              <p class="sale_price">$<%= product.price.floor %> USD</p>
+            </figcaption>
+          </figure>
+        <% end %>
+      <% end %>
+    </div>
+ </div>
+  </div>
+  </div>
+  </div>
+
+<%= link_to 'Add item', new_product_path %> 
+
+
+<%= render 'footer' %>

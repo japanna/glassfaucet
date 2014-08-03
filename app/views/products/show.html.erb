@@ -1,0 +1,70 @@
+<%= render 'header' %>
+<div class="results">
+	<div id='item'>
+        <% if @product.item == "Spout" %>
+	        <div class="item_container">
+	                <img class="img_front" src='/uploads/<%= @product.front_img %> ' alt="<%= @product.serialno %> <%= @product.color %> front"></a>
+	                <img class="img_side" src='/uploads/<%= @product.side_img %> ' alt="<<%= @product.serialno %> <%= @product.color %> side"></a>
+	        </div>
+	        <div class="info">
+	            <h1> <%= @product.color %></h1>
+	            <h2>N° <%= @product.serialno %></h2>
+	            <div class="data">
+	                <p>Overall height: <%= @product.totalheightinches %> in</p>
+	                <p>Spout height: <%= @product.spout_height_in %> in</p>
+	                <p>Projection: <%= @product.projection %> in</p>
+	                <p id="item_description"><%= @product.description %></p>
+	                <p id="item_price">Price: <span>$<%= @product.price.floor %> USD</span></p>
+	            </div>
+	            <a id="contact_gallery_btn" href="/">Contact gallery</a><br>
+	                
+	        </div>
+        <% end %>
+
+        <% if @product.item == "Bowl" %>
+	        <div class="item_container">
+	                <img class="img_bowl" src='/uploads/<%= @product.front_img %> ' alt="<%= @product.serialno %> <%= @product.color %> front"></a>
+	        </div>
+	        <div class="info">
+	            <h1> <%= @product.color %></h1>
+	            <h2>N° <%= @product.serialno %></h2>
+	            <div class="data">
+	                <p>Overall height: <%= @product.totalheightinches %> in</p>
+	                <p>Major diameter: <%= @product.major_diameter %> in</p>
+	                <p id="item_description"><%= @product.description %></p>
+	                <p id="item_price">Price: <span>$<%= @product.price.floor %> USD</span></p>
+	            </div>
+	            <a id="contact_gallery_btn" href="/">Contact gallery</a><br>       
+	        </div>
+        <% end %>
+
+        <% if @product.item == "Control" %>
+	        <div class="item_container">
+	                <img class="img_front" src='/uploads/<%= @product.front_img %> ' alt="<%= @product.serialno %> <%= @product.color %> front"></a>
+	        </div>
+	        <div class="info">
+	            <h1> <%= @product.color %></h1>
+	            <h2>N° <%= @product.serialno %></h2>
+	            <div class="data">
+	                <p>Overall height: <%= @product.totalheightinches %> in</p>
+	                <p>Hardware finish: <%= @product.hardware_finish %></p>
+	                <p id="item_description"><%= @product.description %></p>
+	                <p id="item_price">Price: <span>$<%= @product.price.floor %> USD</span></p>
+	            </div>
+	            <a id="contact_gallery_btn" href="/">Contact gallery</a><br>       
+	        </div>
+        <% end %>
+
+	</div>
+
+</div>
+<script src="/assets/item.js"></script>        
+
+
+
+<%= link_to 'Back to gallery', products_path %> 
+| <%= link_to 'Edit', edit_product_path(@product) %>
+<%= link_to 'Delete', product_path(@product),
+                      method: :delete, data: { confirm: 'Are you sure?'} %>
+
+<%= render 'footer' %>
